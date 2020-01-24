@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   # get '/books/:id', to: 'books#show'
 
   resources :books, :reviews, :users, :downloads, :book_authors, :authors
+
+  root to: "books#index"
+  get '/signup', to: "users#new", as: "signup"
+
 end
 
