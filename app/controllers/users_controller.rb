@@ -8,8 +8,9 @@ class UsersController < ApplicationController
         if @user.save
             redirect_to :controller => 'books', :action => 'index'
         else 
-            flash[:message] = "Invalid"
+            puts "Invalid"
             render :new
+            flash[:message] = "Invalid"
         end
     end
 

@@ -1,0 +1,8 @@
+<% # ? login_path GET or POST? %>
+<% flash[:message] %>
+<%= form_for :auth , url: login_path do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.submit "log in"%>
+<% end %>
+

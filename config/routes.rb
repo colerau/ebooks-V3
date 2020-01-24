@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   resources :books, :reviews, :users, :downloads, :book_authors, :authors
 
   root to: "books#index"
+
   get '/signup', to: "users#new", as: "signup"
+
+  get '/login', to: "auth#login", as: "login"
+  post '/login', to: "auth#authenticate"
 
 end
 

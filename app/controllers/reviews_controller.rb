@@ -11,8 +11,6 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-        Review.create(text: "Awful", user_id: 1, book_id: 2)
-        byebug
         if @review.save 
             # redirects to show page
             redirect_to review_path(@review.id)
