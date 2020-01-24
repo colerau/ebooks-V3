@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get '/books', to: 'books#index'
   # get '/books/:id', to: 'books#show'
 
-  resources :books, :reviews, :users, :downloads, :book_authors, :authors
+  resources :books, :reviews, :users, :downloads, :book_authors, :authors, :carts
 
   root to: "books#index"
 

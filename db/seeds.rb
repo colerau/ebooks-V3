@@ -51,6 +51,9 @@ download4 = Download.create(user_id: 3, book_id: 4, downloaded: true)
 download5 = Download.create(user_id: 2, book_id: 5, downloaded: true)
 download6 = Download.create(user_id: 3, book_id: 5, downloaded: true)
 
+# * Carts:
+cart1 = Cart.create(user_id: 1, book_id: 1, name: "Joy")
+
 
 puts "seeds are done"
 

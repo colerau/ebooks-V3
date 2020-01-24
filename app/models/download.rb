@@ -1,4 +1,4 @@
 class Download < ApplicationRecord
-    belongs_to :user
-    belongs_to :book
+    has_many :carts
+    has_many :users, through: :carts
 end

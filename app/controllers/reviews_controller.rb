@@ -1,12 +1,10 @@
 class ReviewsController < ApplicationController
-    before_action :find_review, only: [:show, :edit, :update]
-    
     def index
         @reviews = Review.all
     end
 
     def show
-        # find_review
+        find_review
     end
 
     def new
@@ -27,13 +25,17 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-        # find_review    
+        find_review    
     end
 
     def update
-        # find_review
+        find_review
         @review.update(text: params[:review][:text])
         redirect_to review_path(@review.id)
+    end
+
+    def users_reviews
+        @reviews = Review.all.find(user_id: cookies[:user_id])
     end
 
     

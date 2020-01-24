@@ -1,0 +1,6 @@
+<%= form_for @cart do |f| %>
+    Which book would you like to add to you cart? <br> <br> 
+    <%= f.collection_select :book_id, Book.all, :id, :title %> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <%= f.submit "add book to cart"%>
+<% end %>
+

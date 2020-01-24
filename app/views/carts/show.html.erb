@@ -1,0 +1,8 @@
+<%byebug%>
+
+<% @cart = Cart.new(review_params) %>
+<% @cart.user_id = cookies[:user_id] %>
+
+<% @cart.save %>
+
+<% byebug %>
