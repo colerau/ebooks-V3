@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
     before_action :find_review, only: [:show, :edit, :update]
     
+    def index
+        @reviews = Review.all
+    end
+
     def show
         # find_review
     end
@@ -11,7 +15,9 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-        if @review.save 
+        @review.user_id = cookies[:user_id]
+
+        if @review.save
             # redirects to show page
             redirect_to review_path(@review.id)
         else 

@@ -1,6 +1,7 @@
 <h1>e-books homepage</h1>
-<h3>all books:</h3>
-<% @books.each do |book| %>
+scroll for all books, or
+<%= link_to "review a book", :controller => :reviews, :action => :new %> <br> <br> <br> <br> <br> <br>
+all books:<% @books.each do |book| %> <br> <br>
     
     <img src="http://www.clker.com/cliparts/2/y/e/g/Q/K/blue-book.svg" style="width:50px;height:40px;"> <br>
     Title: <%= link_to book.title, book_path(book.id) %> <br>
@@ -8,8 +9,7 @@
                 <%= author.first_name %> 
                 <%= author.last_name %> <br>
             <% end %>
-    Genre: <%= book.genre %> <br> <br>
-    <%= link_to 'Review Book', :controller => :reviews, :action => :new %> <br> <br> <br> <br> <br> <br>
+    Genre: <%= book.genre %> <br> <br> <br> <br> <br> <br> <br> <br>
 
 <% end %>
 
